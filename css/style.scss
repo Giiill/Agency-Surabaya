@@ -30,10 +30,24 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    
-
-   
 }
+.background-2 {
+    opacity: 1;
+    animation-name: headerBackground;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes headerBackground {
+   0% {
+    opacity: 1;
+   }
+   100% {
+    opacity: 0;
+   }
+}
+
 .header__blackout-1 {
     position: absolute;
     background: linear-gradient(90.59deg, #000000 3.97%, rgba(0, 0, 0, 0.71) 41.8%, rgba(0, 0, 0, 0.88) 87.08%, #171214 116.87%, #000000 116.87%);
@@ -161,6 +175,12 @@
     
    
     
+}
+// адаптация мобилки
+@media (max-height: 665px) {
+    .header__square {
+        display: none;
+    }
 }
 .square__img img {
     position: absolute;
@@ -713,11 +733,41 @@
     display: grid;
     justify-items: center; 
     justify-content: center;
-    
-
+    position: relative;
+    overflow-x: hidden;
+    width: 254px;
+    border-radius: 10px;
+    margin-left: 90px;
+}
+.footer__whatsapp-item .flare {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 45px;
+    transform: skew(-45deg);
+    animation: flareAnimation;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 3s infinite linear;
     
 }
+
+@keyframes flareAnimation {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
 // адаптация мобилки
+@media (max-width: 992px) {
+    .footer__whatsapp {
+        margin-top: 30px;
+        margin-left: 37%;
+        
+    }
+}
 @media (max-width: 450px) { 
     .footer__top-title {
         justify-items: left;
@@ -818,6 +868,9 @@
         width: 194px;
         height: 38px;
         font-size: 14px;
+    }
+    .footer__whatsapp {
+        width: 194px;
     }
     .footer__link {
         font-size: 10px;
