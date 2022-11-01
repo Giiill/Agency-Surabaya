@@ -1,0 +1,117 @@
+// Бургер 
+@media (max-width: 767px) {
+    .header__burger {
+        display: block;
+        position: fixed;
+        width: 30px;
+        height: 20px;
+        margin-right: 20px;
+        z-index: 11;
+        right: 20px;
+        top: 20px;   
+    }
+    .header__burger::before,
+    .header__burger::after {
+        content: '';
+        background-color: #E20044;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: #E20044;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger::before {
+        top: 0;
+    }
+    .header__burger::after {
+        bottom: 0;
+    }
+}
+// бургер крестик
+.header__burger.active span {
+    transform: scale(0);
+    background-color: #FFFFFF;
+}
+.header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+    background-color: #FFFFFF;
+}
+.header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+    background-color: #FFFFFF;
+}
+// меню бургера
+@media (max-width: 767px) {
+.header__menu {
+    overflow: auto; 
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    padding: 70px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    }
+}
+.header__burger-menu {
+    overflow: auto; 
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    padding: 130px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    row-gap: 90px;
+    transition: all 0.3s ease 0s;
+}
+.header__burger-menu.active {
+    overflow: auto; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    padding: 130px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    row-gap: 90px;
+    transition: all 0.3s ease 0s;
+}
+.header__burger.active {
+    right: 20px;
+    top: 20px;
+    z-index: 11;
+}
+.burger__button {
+    font-family: 'Montserrat-SemiBold';
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 17px;
+    color: #E20044;
+}
+// блокировка прокрутки страницы во время открытого меню
+body.lock {
+    overflow: hidden;
+}

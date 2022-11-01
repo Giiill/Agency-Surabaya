@@ -1,0 +1,202 @@
+.footer {
+    grid-area: footer;
+    width: 100vw;
+    height: auto;
+    background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.94), rgba(17, 17, 17, 0.94)), url(../img/footer-body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    display: grid;
+    grid-template: 100px auto / 1fr minmax(auto, 1300px) 1fr;
+    row-gap: 130px;
+}
+
+
+.footer__blackout {
+    position: relative;
+    height: 100px; 
+}
+.footer__blackout-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    background: #E20044;
+    font-family: 'Poppins-SemiBold';
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+.footer__top {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); // позволяет перенос
+    row-gap: 10px;
+}
+.footer__top-title {
+    font-family: 'Montserrat-SemiBold';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 160%;
+    color: #FFFFFF;
+    display: grid;
+    justify-items: center;
+}
+.footer__whatsapp { 
+    display: grid;
+    justify-items: center; 
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+    width: 254px;
+    border-radius: 10px;
+    margin-left: 90px;
+}
+.footer__whatsapp-item .flare {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 45px;
+    transform: skew(-45deg);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 3s infinite linear; // анимация кнопки
+}
+// анимация кнопки 
+@keyframes flareAnimation {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+.footer__whatsapp-item { 
+    justify-content: center;
+    align-items: center;
+    width: 254px;
+    height: 52px;
+    background: #00AD30;
+    border-radius: 10px;
+    font-family: 'Montserrat-SemiBold';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 160%;
+    color: #FFFFFF;
+    display: flex;
+    gap: 10px;
+}
+
+.footer__lists {
+   grid-column: 2 / 3;
+   display: grid;
+   grid-template: auto / 1fr 1fr 1fr 1fr;
+   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); // позволяет перенос
+   row-gap: 50px;
+   position: relative;
+   left: 0;
+   top: 0;
+   margin-left: 10px;
+   margin-right: 0;
+   margin-top: 0;
+   margin-bottom: 50px;
+}
+.footer__list-1 {
+}
+.footer__list-title {
+    font-family: 'Montserrat-SemiBold';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+.footer__text {
+    font-family: 'Montserrat-Regular';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 210%;
+    color: #DEDEDE;
+    width: 190px;
+}
+.footer__list-2 {
+}
+.footer__list-3 {
+}
+.footer__list {   
+}
+.footer__link {
+    font-family: 'Montserrat-Regular';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 210%;
+    color: #DEDEDE;
+    text-decoration-line: underline;
+}
+.footer__list-4 { 
+}
+
+
+
+
+
+
+
+
+// анимация кнопки
+@media (max-width: 992px) { 
+    .footer__top {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+    }
+}
+
+@media (max-width: 992px) {
+    .footer__whatsapp {
+        margin-top: 30px;
+        margin-left: 37%;
+        
+    }
+}
+
+@media (max-width: 450px) { 
+    .footer__top-title {
+        justify-items: left;
+        margin-left: 10px;
+    }
+    .footer__whatsapp {
+        justify-content: left;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer__top-title {
+        font-size: 16px;
+    }
+}
+@media (max-width: 300px) {
+    .footer__top-title {
+        font-size: 14px;
+    }
+    .footer__whatsapp-item {
+        width: 194px;
+        height: 38px;
+        font-size: 14px;
+    }
+    .footer__whatsapp {
+        width: 194px;
+    }
+    .footer__link {
+        font-size: 10px;
+    }
+    .footer__text {
+        font-size: 10px;
+    }
+}
